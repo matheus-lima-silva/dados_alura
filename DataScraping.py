@@ -1,4 +1,18 @@
 import pandas as pd
+"""
+Este módulo fornece funcionalidades para raspagem de dados de cursos a partir de um arquivo HTML e extração de informações adicionais da web.
+Classes:
+    RaspagemDados: Uma classe para lidar com a raspagem e extração de dados de cursos.
+Métodos:
+    __init__(self, html_path, css_selector, output_dir):
+        Inicializa a instância de RaspagemDados com o caminho do arquivo HTML, seletor CSS e diretório de saída fornecidos.
+    extrair_dados(self):
+        Extrai dados de cursos do arquivo HTML especificado por html_path.
+        Retorna um DataFrame do pandas contendo os dados dos cursos.
+    extrair_horas(self, url):
+        Extrai o número de horas a partir da URL fornecida.
+        Retorna o número de horas como uma string se encontrado, caso contrário retorna None.
+"""
 from bs4 import BeautifulSoup
 import re
 import requests

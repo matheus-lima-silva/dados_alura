@@ -15,6 +15,26 @@ logging.basicConfig(filename='automacao.log', level=logging.INFO,
                     format='%(asctime)s - %(levelname)s - %(message)s')
 
 class AutomacaoFormulario:
+    """
+    Classe para automatizar o preenchimento de formulários de comprovação de atividade complementar.
+    Attributes:
+        url (str): URL da página inicial para automação.
+        raspagem_dados (object): Instância de uma classe responsável pela raspagem de dados.
+        csv_path (str): Caminho para o arquivo CSV contendo os dados dos certificados.
+        timeout (int): Tempo máximo de espera para carregamento de elementos na página.
+        service (Service): Serviço do Selenium para o ChromeDriver.
+        driver (webdriver.Chrome): Instância do navegador Chrome controlada pelo Selenium.
+        vars (dict): Dicionário para armazenar variáveis de uso geral.
+    Methods:
+        iniciar():
+            Inicia o processo de automação, carregando dados do CSV ou raspando dados, realizando login e navegando até a página do formulário.
+        realizar_login():
+            Realiza o login no sistema utilizando credenciais armazenadas em variáveis de ambiente.
+        navegar_pagina_formulario():
+            Navega até a página específica do formulário dentro do sistema após o login.
+        processar_formulario(dados):
+            Preenche e submete o formulário de comprovação de atividade complementar com os dados fornecidos.
+    """
     def __init__(self, url, raspagem_dados=None, csv_path=None, timeout=30):
         self.url = url
         self.raspagem_dados = raspagem_dados

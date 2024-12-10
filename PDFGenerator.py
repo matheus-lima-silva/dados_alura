@@ -6,16 +6,22 @@ except ImportError:
     pdfkit = None
 
 class PDFGenerator:
+    """
+    Uma classe para gerar PDFs a partir de URLs.
+    Atributos:
+    ----------
+    output_dir : str
+        O diretório onde os PDFs gerados serão salvos.
+    Métodos:
+    --------
+    gerar_pdf(url, filename):
+        Gera um PDF a partir da URL fornecida e salva com o nome de arquivo especificado.
+    """
     def __init__(self, output_dir="pdfs"):
         self.output_dir = output_dir
 
     def gerar_pdf(self, url, filename):
-        """Gera um arquivo PDF a partir de uma URL.
-
-        Args:
-            url (str): URL da página a ser convertida.
-            filename (str): Nome do arquivo PDF (sem a extensão).
-        """
+      
 
         output_path = os.path.join(self.output_dir, f"{filename}.pdf")
 
